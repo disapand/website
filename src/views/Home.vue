@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!--页面第一部分-->
+    <div class="section1">
+      <img src="images/section1.png" alt="" class="fadeIn">
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import scrollreavel from 'scrollreveal'
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  components: {},
+  mounted () {
+    this.scrollreavel.reveal('.fadeIn', { easing: 'ease-in-out', duration: 1000, reset: true })
+  },
+  data () {
+    return {
+      scrollreavel: scrollreavel
+    }
   }
 }
 </script>
+
+<style scoped lang="less">
+  .section1 {
+    img {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+</style>

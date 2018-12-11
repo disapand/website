@@ -7,10 +7,15 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',
-      name: 'home',
+      redirect: '/Home'
+    },
+    {
+      path: '/Home',
+      name: 'Home',
       component: Home
     },
     {
