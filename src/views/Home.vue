@@ -13,12 +13,13 @@ import scrollreavel from 'scrollreveal'
 export default {
   name: 'home',
   components: {},
-  mounted () {
-    this.scrollreavel.reveal('.fadeIn', { easing: 'ease-in-out', duration: 1000, reset: true })
+  mounted: function () {
+    // this.scrollreavel.reveal('.fadeIn', { distance: '50px', duration: 3000, reset: true, easing: 'ease-in-out' })
+    scrollreavel().reveal('.fadeIn', { distance: '50px', duration: 3000, reset: true, easing: 'ease-in-out' })
   },
   data () {
     return {
-      scrollreavel: scrollreavel
+      // scrollreavel: scrollreavel()
     }
   }
 }

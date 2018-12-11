@@ -69,7 +69,7 @@ export default {
   methods: {
     handleScroll () {
       let sTop = document.documentElement.scrollTop
-      if (sTop >= 100) {
+      if (sTop >= 10) {
         this.isMini = true
       } else {
         this.isMini = false
