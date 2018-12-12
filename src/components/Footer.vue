@@ -39,11 +39,11 @@ export default {
     display: inline-block;
 
     :first-child {
-      padding-top: 20px;
+      padding-top: 50px;
     }
 
     :last-child {
-      padding-bottom: 20px;
+      padding-bottom: 50px;
     }
   }
   .wx-img{

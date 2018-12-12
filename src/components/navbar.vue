@@ -91,21 +91,21 @@ export default {
   height: 64px;
   line-height: 64px;
   width: 100%;
-  border: 1px solid #0094d8;
-  box-shadow: 0 3px #0094d8;
+  border: 1px solid @primary-color;
+  box-shadow: 0 3px @primary-color;
   background: #333;
   transition: all 0.3s ease-in-out;
 }
 nav {
   position: fixed;
-  z-index: 99;
+  z-index: @zindex-spin;
   top: 0;
   left: 0;
   height: 64px;
   line-height: 64px;
   width: 100%;
   background: @primary-color;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .logo {
   height: 58px;
@@ -116,15 +116,16 @@ nav {
 .nav-mini {
   height: 48px;
   line-height: 48px;
-  box-shadow: 0 1px 5px @primary-color;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  background: @primary-color;
   a, a:hover, a:active, a:visited, a:focus{
-    font-size: 0.8rem;
+    /*font-size: 0.8rem;*/
     padding: 8px 5px;
   }
   .logo {
     height: 46px;
   }
-  transition: all 0.3s ease-in-out;
 }
   ul{
     list-style: none;
@@ -148,6 +149,7 @@ nav {
       width: 0%;
       height: 2.5px;
       background: #fff;
+      transition: all 0.2s ease-in-out;
     }
     a:hover:after{
       width: 100%;
