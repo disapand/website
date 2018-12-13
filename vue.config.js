@@ -16,5 +16,7 @@ module.exports = {
         'src/custom.less'
       ]
     }
-  }
+  },
+
+  lintOnSave: undefined
 }
