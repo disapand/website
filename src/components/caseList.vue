@@ -1,22 +1,30 @@
 <template>
-  <div class="caseList">
-    <div class="caseImg" v-bind:style="img">
-    </div>
-    <div class="cover">
-        <div class="cover-bg"></div>
-      <Icon type="md-add-circle" class="iconAdd"/>
-    </div>
-    <div class="caseIntro">
-      <p class="caseName">{{ caseName }}</p>
-      <span class="caseTime">{{ caseTime }}</span>
-    </div>
-  </div>
+  <router-link :to="caseUrl">
+      <div class="caseList">
+          <div class="caseImg" v-bind:style="img">
+          </div>
+          <div class="cover">
+              <div class="cover-bg"></div>
+              <Icon type="md-add-circle" class="iconAdd"/>
+          </div>
+          <div class="caseIntro">
+              <p class="caseName">{{ caseName }}</p>
+              <span class="caseTime">{{ caseTime }}</span>
+          </div>
+      </div>
+  </router-link>
 </template>
 
 <script>
+import scrollreveal from 'scrollreveal'
+
 export default {
   name: 'caseList',
   props: {
+    caseUrl: {
+      type: String,
+      default: '/About'
+    },
     caseImg: {
       type: String,
       default: '/images/case1.jpg'
@@ -38,6 +46,9 @@ export default {
         backgroundSize: 'cover'
       }
     }
+  },
+  mounted () {
+    scrollreveal().reveal('.caseList', { distance: '50px', origin: 'bottom', reset: true, easing: 'ease-in-out', duration: 1000 })
   }
 }
 </script>

@@ -63,7 +63,7 @@
           <case-list></case-list>
         </Col>
         <Col :span="6">
-          <case-list caseImg="/images/case2.jpg"></case-list>
+          <case-list caseImg="/images/case2.jpg" caseUrl="/Case"></case-list>
         </Col>
         <Col :span="6">
           <case-list caseImg="/images/case3.jpg"></case-list>
