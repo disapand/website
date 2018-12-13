@@ -3,6 +3,8 @@
     <div class="caseImg" v-bind:style="img">
     </div>
     <div class="cover">
+        <div class="cover-bg"></div>
+      <Icon type="md-add-circle" class="iconAdd"/>
     </div>
     <div class="caseIntro">
       <p class="caseName">{{ caseName }}</p>
@@ -54,10 +56,14 @@ export default {
     .caseName {
       color: #fff;
     }
-    .cover {
-      bottom: 0;
+    .cover-bg {
+        height: 100%;
       transition: all 0.3s ease-in-out;
     }
+      .iconAdd {
+          top: 50%;
+          transition: all 0.3s ease-in-out;
+      }
   }
   .caseImg {
     width: 80%;
@@ -94,15 +100,32 @@ export default {
     height: 3px;
     transition: all 0.3s ease-in-out;
   }
-  .cover {
+    .cover{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+  .cover-bg {
     background: #000;
     opacity: 0.1;
     position: absolute;
     width: 80%;
+      height: 0;
     left: 10%;
     top: 30px;
-    bottom: 100%;
     transition: all 0.3s ease-in-out;
+  }
+  .iconAdd{
+    font-size: 5rem;
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    color: @primary-color;
+      transition: all 0.3s ease-in-out;
   }
 }
 </style>
