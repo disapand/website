@@ -63,6 +63,12 @@ export default {
       opacity: 1;
       transition: all 0.5s ease-in-out;
     }
+    .intro:before{
+       left: -20px;
+       opacity: .8;
+       transition: all 0.4s ease-in-out;
+       cursor: pointer;
+     }
   }
   .wrap{
     display: inline-block;
@@ -100,12 +106,6 @@ export default {
       background: @primary-color;
       opacity: 0;
       transition: all 0.4s ease-in-out;
-    }
-    &:hover:before{
-      left: -20px;
-      opacity: .8;
-      transition: all 0.4s ease-in-out;
-      cursor: pointer;
     }
   }
 }

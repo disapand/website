@@ -88,7 +88,7 @@ export default {
     background: #eee;
     position: relative;
     .caseName {
-      padding: 30px 0 15px 30px;
+      padding: 30px 30px 15px 30px;
       position: relative;
       z-index: 3;
     }
