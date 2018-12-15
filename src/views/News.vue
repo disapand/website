@@ -29,6 +29,9 @@ export default {
 
 <style scoped lang="less">
 .banner {
-
+height: 500px;
 }
+  .bg-gray {
+    padding: 30px 15px;
+  }
 </style>
