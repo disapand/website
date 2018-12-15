@@ -12,6 +12,7 @@
     "reset.css": "^2.0.2",
     "scrollreveal": "^4.0.5",
     "vue": "^2.5.17",
+    "vue-amap": "^0.5.8",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

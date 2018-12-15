@@ -41,7 +41,7 @@
           <case-list></case-list>
         </Col>
         <Col :span="6">
-          <case-list caseImg="/images/case2.jpg" caseName="案例名称过长会怎样呢案例名称过长会怎样呢案例名称过长会怎样呢案例名称过长会怎样呢案例名称过长会怎样呢案例名称过长会怎样呢"></case-list>
+          <case-list caseImg="/images/case2.jpg"></case-list>
         </Col>
         <Col :span="6">
           <case-list caseImg="/images/case3.jpg"></case-list>
@@ -73,16 +73,23 @@
     <!--页面第五部分：合作单位-->
     <div class="section5">
       <Row>
-        <Col :span="16" :offset="4">
-          <ul>
-            <li><cooperation></cooperation></li>
-            <li><cooperation></cooperation></li>
-            <li><cooperation></cooperation></li>
-            <li><cooperation></cooperation></li>
-            <li><cooperation></cooperation></li>
-          </ul>
+        <Col :span="16" :offset="4" style="overflow: hidden;">
+          <div class="cul">
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation cooperationLogo="images/cxjy.png"></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+            <div class="cli"><cooperation></cooperation></div>
+          </div>
         </Col>
       </Row>
+    </div>
+    <!--页面第六部分：地图-->
+    <div class="section6">
+      <amap></amap>
     </div>
   </div>
 </template>
@@ -92,10 +99,12 @@ import scrollreavel from 'scrollreveal'
 import newsList from '@/components/newsList'
 import caseList from '@/components/caseList'
 import cooperation from '@/components/cooperation'
+import amap from '@/components/Map'
 
 export default {
   name: 'home',
   components: {
+    amap,
     newsList,
     caseList,
     cooperation
@@ -106,12 +115,21 @@ export default {
     scrollreavel().reveal('.en', { distance: '50px', origin: 'bottom', duration: 1000, reset: true, easing: 'ease-in-out' })
     scrollreavel().reveal('.section3', { opacity: 0, duration: 1000, reset: true, easing: 'ease-in-out' })
     scrollreavel().reveal('.intro-text', { distance: '50px', origin: 'bottom', duration: 1000, delay: 500, reset: true, easing: 'ease-in-out' })
+    scrollreavel().reveal('section6', { distance: '50px', origin: 'bottom', duration: 1000, delay: 500, reset: true, easing: 'ease-in-out' })
+    scrollreavel().reveal('section5', { distance: '50px', origin: 'bottom', duration: 1000, delay: 500, reset: true, easing: 'ease-in-out' })
   },
   data () {
     return {
       fullImg: {
         height: document.documentElement.clientHeight - 64 + 'px'
-      }
+      },
+      zoom: 16,
+      center: [121.406051, 31.179695],
+      plugin: [
+        'AMap.Scale',
+        'AMap.OverView',
+        'AMap.ToolBar'
+      ]
     }
   },
   methods: {}
@@ -192,15 +210,19 @@ export default {
   }
   .section5 {
     margin-top: 30px;
+    padding: 30px 0;
     background: #eee;
-    border: 1px solid red;
   }
-  ul {
-    list-style: none;
-    li {
+  .cul {
+    width: 100%;
+    display: flex;
+    .cli {
       float: left;
       display: inline-block;
       width: 20%;
     }
+  }
+  .section6 {
+    height: 500px;
   }
 </style>

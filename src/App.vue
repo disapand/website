@@ -5,9 +5,7 @@
         <navbar></navbar>
       </Header>
       <Content>
-        <div id="nav">
-          <router-view/>
-        </div>
+        <router-view/>
       </Content>
       <Footer>
         <i-footer></i-footer>

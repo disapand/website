@@ -5,9 +5,16 @@ import router from './router'
 import store from './store'
 import iView from 'iview'
 import reset from 'reset.css'
+import VueAMap from 'vue-amap'
 
 Vue.use(iView)
 Vue.use(reset)
+Vue.use(VueAMap)
+
+VueAMap.initAMapApiLoader({
+  key: 'f6ce604b03a09ce50afed0a07308b00d',
+  plugin: ['AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType']
+})
 
 Vue.config.productionTip = false
 
